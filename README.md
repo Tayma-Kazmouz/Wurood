@@ -1,4 +1,4 @@
-Wurood is an online flower shop project 
+Wurood is an online flower shop project that has been done through team-work effort by: Tayma, Waddah, and Abdallah 
 
 Here are some images from the website created. 
 
