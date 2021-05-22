@@ -24,3 +24,7 @@ My Account
 
 Contact Us
 ![Contact Us](https://user-images.githubusercontent.com/80001459/119236846-408ab580-bb42-11eb-809e-c008cd82aa33.png)
+
+
+Reference for the open source:
+https://github.com/yvsser1/ecommerce-website
