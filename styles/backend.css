@@ -499,6 +499,7 @@ img {
   padding-bottom: 53px;
   font-size: 13px;
   color: #72147e;
+  font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
   -webkit-transition: color .3s;
@@ -506,7 +507,7 @@ img {
 }
 
 .page-header__bottomline .main-nav .categories__link:hover {
-  color: #00c8c8
+  color: #e93b81
 }
 
 .page-header__bottomline .main-nav .categories__link i {
@@ -957,6 +958,30 @@ img {
 }
 
 .nero3__text {
+  font-size: 30px;
+}
+
+.nero4 {
+  padding-top: 160px;
+  padding-bottom: 140px;
+  font-family: 'montserratlight', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFF;
+  background: #666 url("../images/banner 8.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.nero4__heading {
+  font-size: 48px;
+}
+
+.nero4__bold {
+  font-weight: 700;
+}
+
+.nero4__text {
   font-size: 30px;
 }
 

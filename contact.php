@@ -12,14 +12,11 @@ include("includes/main.php");
 
   <!-- MAIN -->
   <main>
-    <!-- HERO -->
+    <!-- Contact Page -->
     <div class="nero2">
       <div class="nero2__heading">
         <span class="nero2__bold">Contact</span> Us
       </div>
-      <!-- <p class="nero__text">
-      If you have any questions, please feel free to contact us, our customer service center is working for you 24/7.
-      </p> -->
     </div>
   </main>
 
@@ -32,14 +29,12 @@ include("includes/main.php");
 <center><!-- center Starts -->
 
 <?php
-
+// select all values from the contact us table
 $get_contact_us = "select * from contact_us";
 
 $run_conatct_us = mysqli_query($con,$get_contact_us);
 
 $row_conatct_us = mysqli_fetch_array($run_conatct_us);
-
-// $contact_heading = $row_conatct_us['contact_heading'];
 
 $contact_desc = $row_conatct_us['contact_desc'];
 
@@ -102,7 +97,7 @@ $contact_email = $row_conatct_us['contact_email'];
 <option> Select Enquiry Type </option>
 
 <?php
-
+// select all values from enquiry_type table
 $get_enquiry_types = "select * from enquiry_types";
 
 $run_enquiry_types = mysqli_query($con,$get_enquiry_types);
@@ -182,7 +177,7 @@ $from = "whatever@anything.com";
 
 mail($email,$subject,$msg,$from);
 
-echo "<h2 align='center'>Your message has been sent successfully</h2>";
+echo "<h2 align='center'>Your message has been sent successfully!</h2>";
 
 }
 

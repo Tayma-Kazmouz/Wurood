@@ -1,5 +1,6 @@
 <?php
 
+// getting info from sql
 $customer_session = $_SESSION['customer_email'];
 
 $get_customer = "select * from customers where customer_email='$customer_session'";

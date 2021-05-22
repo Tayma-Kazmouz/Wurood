@@ -3,7 +3,7 @@
 
 <h1> My Wishlist </h1>
 
-<p class="lead"> Your all Wishlist Products on one place. </p>
+<p class="lead"> All Your Wishlist Products in One Place. </p>
 
 </center><!-- center Ends -->
 
@@ -42,7 +42,7 @@ $row_customer = mysqli_fetch_array($run_customer);
 
 $customer_id = $row_customer['customer_id'];
 
-$i = 0;
+$i = 0; //wishlistnumber
 
 
 $get_wishlist = "select * from wishlist where customer_id='$customer_id'";
@@ -79,7 +79,7 @@ $i++;
 
 <img src="../admin_area/product_images/<?php echo $product_img1; ?>" width="60" height="60">
 
-&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; <!-- space -->
 
 <a href="../<?php echo $product_url; ?>">
 

@@ -21,7 +21,7 @@
         </div>
 
         <div class="basket">
-          <a href="cart.php" class="btn btn--basket">
+          <a href="../cart.php" class="btn btn--basket">
             <i class="icon-basket" href="my_orders.php"></i>
             <?php items(); ?> items
           </a>
@@ -35,10 +35,7 @@
           if(!isset($_SESSION['customer_email'])){
             echo '<a href="../customer_register.php" class="login__link">Register</a>';
           }
-            // else
-            // {
-            //     echo '<a href="my_.php?my_orders" class="login__link">My Account</a>';
-            // }
+
 ?>
           </li>
 
@@ -72,20 +69,6 @@
 
         <nav class="main-nav">
           <ul class="categories">
-
-            <li class="categories__item">
-              <!-- <a class="categories__link" href="#">
-                Mens
-                <i class="icon-down-open-1"></i>
-              </a> -->
-              </li>
-
-            <li class="categories__item">
-              <!-- <a class="categories__link" href="#">
-                Womens
-
-              </a> -->
-            </li>
 
             <li class="categories__item">
               <a class="categories__link categories__link--active" href="../shop.php">

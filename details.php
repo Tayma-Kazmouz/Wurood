@@ -51,10 +51,6 @@ $pro_label = $row_product['product_label'];
 
 $pro_psp_price = $row_product['product_psp_price'];
 
-// $pro_features = $row_product['product_features'];
-//
-// $pro_video = $row_product['product_video'];
-
 $status = $row_product['status'];
 
 $pro_url = $row_product['product_url'];
@@ -64,7 +60,7 @@ if($pro_label == ""){
 
 }
 else{
-
+// Inner Style command
 $product_label = "
 
 <a class='label sale' href='#' style='color:black;'>
@@ -93,12 +89,12 @@ $p_cat_title = $row_p_cat['p_cat_title'];
 ?>
 
   <main>
-    <!-- HERO -->
-    <div class="nero">
-      <div class="nero__heading">
-        <span class="nero__bold">Product </span>View
+    <!-- Details -->
+    <div class="nero4">
+      <div class="nero4__heading">
+        <span class="nero4__bold">Product </span>View
       </div>
-      <p class="nero__text">
+      <p class="nero4__text">
       </p>
     </div>
   </main>
@@ -230,7 +226,7 @@ else{
 $product_price = $pro_price;
 
 }
-
+//insert the new values into a cart table
 $query = "insert into cart (p_id,ip_add,qty,p_price,size) values ('$p_id','$ip_add','$product_qty','$product_price','$product_size')";
 
 $run_query = mysqli_query($db,$query);
@@ -260,7 +256,6 @@ if($status == "product"){
 
 <select name="product_qty" class="form-control" >
 
-<!-- <option>Select quantity</option> -->
 <option>1</option>
 <option>2</option>
 <option>3</option>
@@ -282,27 +277,33 @@ if($status == "product"){
 
 <select name="product_size" class="form-control" >
 
-<!-- <option>Select a Size</option> -->
+
 <option>Small (3 pieces)</option>
 <option>Medium (6 pieces)</option>
 <option>Large (9 pieces)</option>
 
 
+
+
 </select>
 
-</div><!-- col-md-7 Ends -->
+</div>
+<!-- col-md-7 Ends -->
 
 
-</div><!-- form-group Ends -->
+</div>
+<!-- form-group Ends -->
 
 <?php }else { ?>
 
 
-<div class="form-group"><!-- form-group Starts -->
+<div class="form-group">
+  <!-- form-group Starts -->
 
 <label class="col-md-5 control-label" >Bundle Quantity </label>
 
-<div class="col-md-7" ><!-- col-md-7 Starts -->
+<div class="col-md-7" >
+  <!-- col-md-7 Starts -->
 
 <select name="product_qty" class="form-control" >
 
@@ -314,17 +315,20 @@ if($status == "product"){
 <option>5</option>
 
 
-</select>
+<!-- </select> -->
 
-</div><!-- col-md-7 Ends -->
+</div>
+<!-- col-md-7 Ends -->
 
-</div><!-- form-group Ends -->
+</div>
+<!-- form-group Ends -->
 
-<div class="form-group" ><!-- form-group Starts -->
+<div class="form-group" >
+  <!-- form-group Starts -->
 
-<label class="col-md-5 control-label" >Bundle Size</label>
+ <label class="col-md-5 control-label" >Bundle Size</label>
 
-<div class="col-md-7" ><!-- col-md-7 Starts -->
+ <div class="col-md-7" >< col-md-7 Starts>
 
 <select name="product_size" class="form-control" >
 
@@ -336,10 +340,12 @@ if($status == "product"){
 
 </select>
 
-</div><!-- col-md-7 Ends -->
+</div>
+<!-- col-md-7 Ends -->
 
 
-</div><!-- form-group Ends -->
+</div>
+<!-- form-group Ends -->
 
 
 <?php } ?>

@@ -171,7 +171,7 @@ $(document).ready(function(){
 
   function getProducts(){
 
-  // Manufacturers Code Starts
+  // Suppliers Code Starts
 
     var sPath = '';
 

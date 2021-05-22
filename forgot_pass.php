@@ -10,7 +10,7 @@ include("includes/main.php");
 ?>
 
   <main>
-    <!-- HERO -->
+    <!-- Forgot Pass -->
     <div class="nero">
       <div class="nero__heading">
         <span class="nero__bold">Forgot</span> password
@@ -142,7 +142,7 @@ Click Here To Login Your Account
 
 ";
 
-$from = "sad.ahmed22224@gmail.com";
+$from = "anything@whatever.com";
 
 $subject = "Your Password";
 
@@ -152,7 +152,7 @@ $headers .= "Content-type: text/html\r\n";
 
 mail($c_email,$subject,$message,$headers);
 
-echo "<script> alert('Your Password has been sent to you, check your inbox ') </script>";
+echo "<script> alert('Your Password has been sent to you, check your inbox. ') </script>";
 
 echo "<script>window.open('checkout.php','_self')</script>";
 

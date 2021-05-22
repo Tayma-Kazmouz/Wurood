@@ -10,7 +10,7 @@ include("includes/main.php");
 ?>
 
   <main>
-    <!-- HERO -->
+    <!-- About Us page -->
     <div class="nero3">
       <div class="nero3__heading">
         <span class="nero3__bold">About</span> us
@@ -20,22 +20,22 @@ include("includes/main.php");
     </div>
   </main>
 
-<div id="content" ><!-- content Starts -->
-<div class="container" ><!-- container Starts -->
+<div id="content" ><!-- Content Starts -->
+<div class="container" ><!-- Container Starts -->
 
 <div class="col-md-12" ><!-- col-md-12 Starts -->
 
-<div class="box" ><!-- box Starts -->
+<div class="box" ><!-- Box Starts -->
 
 <?php
 
-$get_about_us = "select * from about_us";
+$get_about_us = "select * from about_us"; //selects from about_us table
 
 $run_about_us = mysqli_query($con,$get_about_us);
 
 $row_about_us = mysqli_fetch_array($run_about_us);
 
-$about_heading = $row_about_us['about_heading'];
+$about_heading = $row_about_us['about_heading']; //sets the variable to the table attributes
 
 $about_short_desc = $row_about_us['about_short_desc'];
 

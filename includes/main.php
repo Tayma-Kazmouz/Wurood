@@ -36,10 +36,6 @@
 if(!isset($_SESSION['customer_email'])){
   echo '<a href="customer_register.php" class="login__link">Register</a>';
 }
-  // else
-  // {
-  //     echo '<a href="my_account.php?my_orders" class="login__link">My Account</a>';
-  // }
 ?>
 </li>
 
@@ -71,33 +67,12 @@ if(!isset($_SESSION['customer_email'])){
         </div>
 
         <nav class="main-nav">
-          <!-- <ul class="categories"> -->
-
-            <!-- <li class="categories__item">
-              <a class="categories__link" href="#">
-                Mens
-
-              </a>
-              </li> -->
-
-            <!-- <li class="categories__item">
-              <a class="categories__link" href="#">
-                Womens
-
-              </a>
-            </li> -->
 
             <li class="categories__item">
               <a class="categories__link categories__link--active" href="shop.php">
                 Shop
               </a>
             </li>
-
-            <!-- <li class="categories__item">
-              <a class="categories__link" href="localstore.php">
-                Local Stores
-              </a>
-            </li> -->
 
           <li class="categories__item">
               <a class="categories__link" href="customer/my_account.php?my_orders">

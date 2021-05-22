@@ -1,5 +1,5 @@
 <?php
-
+// confirmation page
 session_start();
 
 if(!isset($_SESSION['customer_email'])){
@@ -9,8 +9,8 @@ echo "<script>window.open('../checkout.php','_self')</script>";
 
 }else {
 
-include("D:/garbage/htdocs/website1/includes/db.php");
-include("D:/garbage/htdocs/website1/includes/header.php");
+include("C:/xampp/htdocs/Wurood/website1/includes/db.php");
+include("C:/xampp/htdocs/Wurood/website1/includes/header.php");
 include("functions/functions.php");
 include("includes/main.php");
 
@@ -69,7 +69,6 @@ $order_id = $_GET['order_id'];
 <option>Select Payment Mode</option>
 <option>Bank Code</option>
 <option>Mobile Payment</option>
-<!-- <option>Easy paisa</option> -->
 <option>Western Union</option>
 
 </select><!-- select Ends -->
@@ -174,7 +173,7 @@ echo "<script>window.open('my_account.php?my_orders','_self')</script>";
 
 <?php
 
-include("D:/garbage/htdocs/website1/includes/footer.php");
+include("C:/xampp/htdocs/Wurood/website1/includes/footer.php");
 
 ?>
 

@@ -5,7 +5,7 @@ $aPCat = array();
 
 $aCat  = array();
 
-/// Manufacturers Code Starts ///
+/// Suppliers Code Starts ///
 
 if(isset($_REQUEST['man'])&&is_array($_REQUEST['man'])){
 
@@ -21,7 +21,7 @@ $aMan[(int)$sVal] = (int)$sVal;
 
 }
 
-/// Manufacturers Code Ends ///
+/// Suppliers Code Ends ///
 
 /// Products Categories Code Starts ///
 

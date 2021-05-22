@@ -3,11 +3,11 @@
 
 <h1>My Orders</h1>
 
-<p class="lead"> Your orders on one place.</p>
+<p class="lead"> Your orders in one Place.</p>
 
 <p class="text-muted" >
 
-If you have any questions, please feel free to <a href="../contact.php" > contact us,</a> our customer service center is working for you 24/7.
+If you have any questions, please feel free to <a href="../contact.php" > contact us</a> , our customer service center is working for you 24/7.
 
 
 </p>
@@ -25,7 +25,7 @@ If you have any questions, please feel free to <a href="../contact.php" > contac
 
 <tr>
 
-<th>O N:</th>
+<th>O.N:</th>
 <th>Due Amount:</th>
 <th>Invoice No:</th>
 <th>Qty:</th>
@@ -57,7 +57,7 @@ $get_orders = "select * from customer_orders where customer_id='$customer_id'";
 
 $run_orders = mysqli_query($con,$get_orders);
 
-$i = 0;
+$i = 0;    //ordernumber
 
 while($row_orders = mysqli_fetch_array($run_orders)){
 
@@ -107,7 +107,7 @@ $order_status = "Paid";
 <td><?php echo $order_status; ?></td>
 
 <td>
-<a href="confirm.php?order_id=<?php echo $order_id; ?>" target="blank" class="btn btn-primary btn-sm" > Confirm If Paid </a>
+<a href="confirm.php?order_id=<?php echo $order_id; ?>" target="blank" class="btn btn-primary btn-sm" > Confirm Payment </a>
 </td>
 
 
@@ -121,6 +121,3 @@ $order_status = "Paid";
 </table><!-- table table-bordered table-hover Ends -->
 
 </div><!-- table-responsive Ends -->
-
-
-

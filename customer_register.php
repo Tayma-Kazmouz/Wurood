@@ -13,7 +13,7 @@ include("includes/main.php");
 
   <!-- MAIN -->
   <main>
-    <!-- HERO -->
+    <!-- Customer Registration Page-->
     <div class="nero">
       <div class="nero__heading">
         <span class="nero__bold">Register</span> AT WUROOD
@@ -163,10 +163,6 @@ include("includes/main.php");
 <div class="form-group"><!-- form-group Starts -->
 
 <center>
-
-<!-- <label> Captcha Verification </label> -->
-
-<!-- <div class="g-recaptcha" data-sitekey="6Lc-WxYUAAAAAFUhTFfBEzLGmEgRXHHdsD4ECvIC"></div> -->
 
 </center>
 
@@ -362,7 +358,7 @@ $c_image_tmp = $_FILES['c_image']['tmp_name'];
 $c_ip = getRealUserIp();
 
 move_uploaded_file($c_image_tmp,"customer/customer_images/$c_image");
-
+// select from customers table and get a certain email
 $get_email = "select * from customers where customer_email='$c_email'";
 
 $run_email = mysqli_query($con,$get_email);
@@ -381,7 +377,7 @@ $customer_confirm_code = mt_rand();
 
 $subject = "Email Confirmation Message";
 
-$from = "sad.ahmed22224@gmail.com";
+$from = "anything@whatever.com";
 
 $message = "
 
@@ -435,12 +431,6 @@ echo "<script>window.open('index.php','_self')</script>";
 
 
 }
-// else{
-//
-// echo "<script>alert('Please Select Captcha, Try Again')</script>";
-//
-// }
-
 
 }
 

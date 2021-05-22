@@ -9,7 +9,7 @@ include("includes/main.php");
 ?>
 
   <main>
-    <!-- HERO -->
+    <!-- Cart_Body-->
     <div class="nero">
       <div class="nero__heading">
         <span class="nero__bold">SHOP</span> Cart
@@ -36,7 +36,7 @@ include("includes/main.php");
 <?php
 
 $ip_add = getRealUserIp();
-
+// select from carts table and add ip_add value
 $select_cart = "select * from cart where ip_add='$ip_add'";
 
 $run_cart = mysqli_query($con,$select_cart);
@@ -87,6 +87,8 @@ $pro_size = $row_cart['size'];
 $pro_qty = $row_cart['qty'];
 
 $only_price = $row_cart['p_price'];
+
+// select from the products table and add product_id value
 
 $get_products = "select * from products where product_id='$pro_id'";
 
@@ -229,7 +231,7 @@ if($code == ""){
 
 }
 else{
-
+// selects from a coupons table and find a value with a certain coupon_code
 $get_coupons = "select * from coupons where coupon_code='$code'";
 
 $run_coupons = mysqli_query($con,$get_coupons);
@@ -255,7 +257,7 @@ echo "<script>alert('Your Coupon Code Has Been Expired')</script>";
 
 }
 else{
-
+// select from a cart table and find two values with a certain attribute
 $get_cart = "select * from cart where p_id='$coupon_pro' AND ip_add='$ip_add'";
 
 $run_cart = mysqli_query($con,$get_cart);
@@ -264,7 +266,7 @@ $check_cart = mysqli_num_rows($run_cart);
 
 
 if($check_cart == 1){
-
+//update the coupon table with a certain value of a coupon code
 $add_used = "update coupons set coupon_used=coupon_used+1 where coupon_code='$code'";
 
 $run_used = mysqli_query($con,$add_used);
@@ -343,7 +345,7 @@ echo @$up_cart = update_cart();
 
 <div id="row same-height-row"><!-- row same-height-row Starts -->
 
-<div class="col-md-3 col-sm-6"><!-- col-md-3 col-sm-6 Starts -->
+<div class="col-md-4 col-sm-6"><!-- col-md-3 col-sm-6 Starts -->
 
 <div class="box same-height headline"><!-- box same-height headline Starts -->
 

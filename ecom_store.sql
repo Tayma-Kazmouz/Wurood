@@ -11,7 +11,7 @@
  Target Server Version : 100418
  File Encoding         : 65001
 
- Date: 16/05/2021 15:36:33
+ Date: 22/05/2021 16:25:37
 */
 
 SET NAMES utf8mb4;
@@ -33,44 +33,6 @@ CREATE TABLE `about_us`  (
 -- Records of about_us
 -- ----------------------------
 INSERT INTO `about_us` VALUES (1, 'Our Story', '\r\n\r\nSuccess is not final, failure is not fatal: it is the courage to continue that counts. - Winston Churchill\r\n', '\r\nWurood is proud to serve Istanbul with its special floral arrangments. We are a one-location, friend-owned (Besiktas). We are dedicated to providing only the best floral arrangements and gifts, as well as polite and timely service. Our knowledgeable staff is committed to making your experience a good one and all of our customers are valuable to us. That is why we still go above and beyond.\r\n');
-
--- ----------------------------
--- Table structure for admins
--- ----------------------------
-DROP TABLE IF EXISTS `admins`;
-CREATE TABLE `admins`  (
-  `admin_id` int NOT NULL AUTO_INCREMENT,
-  `admin_name` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `admin_email` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `admin_pass` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `admin_image` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `admin_contact` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `admin_country` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `admin_job` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `admin_about` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  PRIMARY KEY (`admin_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
--- Records of admins
--- ----------------------------
-INSERT INTO `admins` VALUES (2, 'Waddah,Tayma,Abdallah', 'admin@ave.com', '123', '', '0123456789', 'Turkey', 'Students', '');
-
--- ----------------------------
--- Table structure for bundle_product_relation
--- ----------------------------
-DROP TABLE IF EXISTS `bundle_product_relation`;
-CREATE TABLE `bundle_product_relation`  (
-  `rel_id` int NOT NULL AUTO_INCREMENT,
-  `rel_title` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `product_id` int NOT NULL,
-  `bundle_id` int NOT NULL,
-  PRIMARY KEY (`rel_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
--- Records of bundle_product_relation
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for cart
@@ -141,12 +103,13 @@ CREATE TABLE `coupons`  (
   `coupon_limit` int NOT NULL,
   `coupon_used` int NOT NULL,
   PRIMARY KEY (`coupon_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of coupons
 -- ----------------------------
-INSERT INTO `coupons` VALUES (3, 8, 'sunflowers', '10', '333444  ', 7, 7);
+INSERT INTO `coupons` VALUES (1, 8, 'sunflowers', '10', '333444  ', 5, 1);
+INSERT INTO `coupons` VALUES (2, 6, 'carnations', '20', '694200', 5, 1);
 
 -- ----------------------------
 -- Table structure for customer_orders
@@ -162,7 +125,7 @@ CREATE TABLE `customer_orders`  (
   `order_date` timestamp NOT NULL DEFAULT current_timestamp ON UPDATE CURRENT_TIMESTAMP,
   `order_status` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`order_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 25 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 27 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of customer_orders
@@ -174,8 +137,10 @@ INSERT INTO `customer_orders` VALUES (19, 2, 150, 1068059025, 1, 'Medium', '2017
 INSERT INTO `customer_orders` VALUES (20, 2, 288, 909940689, 3, 'Large', '2017-02-27 14:06:32', 'complete');
 INSERT INTO `customer_orders` VALUES (21, 2, 400, 909940689, 2, 'Meduim', '2017-02-27 14:06:37', 'complete');
 INSERT INTO `customer_orders` VALUES (22, 6, 60, 999310984, 1, 'Small (3 pieces)', '2021-05-14 04:20:15', 'Complete');
-INSERT INTO `customer_orders` VALUES (23, 7, 10, 334642094, 1, 'Small (3 pieces)', '2021-05-16 04:40:21', 'pending');
+INSERT INTO `customer_orders` VALUES (23, 7, 10, 334642094, 1, 'Small (3 pieces)', '2021-05-20 23:39:06', 'Complete');
 INSERT INTO `customer_orders` VALUES (24, 7, 40, 724100346, 1, 'Small (3 pieces)', '2021-05-16 05:23:26', 'Complete');
+INSERT INTO `customer_orders` VALUES (25, 7, 50, 1708867829, 1, 'Small (3 pieces)', '2021-05-20 16:30:04', 'pending');
+INSERT INTO `customer_orders` VALUES (26, 11, 120, 124055521, 3, 'Small (3 pieces)', '2021-05-22 16:16:05', 'Complete');
 
 -- ----------------------------
 -- Table structure for customers
@@ -194,17 +159,12 @@ CREATE TABLE `customers`  (
   `customer_ip` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `customer_confirm_code` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`customer_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of customers
 -- ----------------------------
-INSERT INTO `customers` VALUES (2, 'user', 'user@ave.com', '123', 'United State', 'New York', '0092334566931', 'new york', '', '::1', '');
-INSERT INTO `customers` VALUES (3, 'kai', 'kai@ave.com', '963852741', 'turkey', 'Istanbul', '901289173', 'Istanbul', 'billie3loosh.png', '::1', '745595165');
-INSERT INTO `customers` VALUES (4, 'kai', 'kai@whatever.com', '124578', 'turkey', 'Istanbul', '129837912', 'Istanbul', 'billie3loosh.png', '::1', '1127354516');
-INSERT INTO `customers` VALUES (7, '1', '1', '1', '1', '1', '1', '1', '', '::1', '1391340417');
-INSERT INTO `customers` VALUES (8, '12', '12', '12', '12', '12', '05368105438', '12', '', '::1', '1774097104');
-INSERT INTO `customers` VALUES (9, 'tayma', 'kaisercool2@gmail.com', '1', '1', '1', '1', '1', '', '::1', '1420046999');
+INSERT INTO `customers` VALUES (11, 'User1', 'user1email@gmail.com', 'user1pass!', 'Saudi Arabia', 'Jeddah', '012346789', 'Jeddah', 'user1.png', '::1', '1902102211');
 
 -- ----------------------------
 -- Table structure for enquiry_types
@@ -259,13 +219,15 @@ CREATE TABLE `payments`  (
   `code` int NOT NULL,
   `payment_date` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`payment_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of payments
 -- ----------------------------
 INSERT INTO `payments` VALUES (4, 999310984, 70, 'Bank Code', 1541654654, 21651564, '10245');
 INSERT INTO `payments` VALUES (5, 724100346, 50, 'Western Union', 126453, 14654, '12/1/2021');
+INSERT INTO `payments` VALUES (6, 999310984, 70, 'Bank Code', 341655151, 12105246, '12/1/2021');
+INSERT INTO `payments` VALUES (7, 124055521, 0, 'Bank Code', 123456789, 2456, '22-May-21');
 
 -- ----------------------------
 -- Table structure for pending_orders
@@ -280,7 +242,7 @@ CREATE TABLE `pending_orders`  (
   `size` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `order_status` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`order_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 25 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 27 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of pending_orders
@@ -291,8 +253,10 @@ INSERT INTO `pending_orders` VALUES (18, 2, 1715523401, '11', 1, 'Medium', 'pend
 INSERT INTO `pending_orders` VALUES (19, 2, 1068059025, '7', 1, 'Medium', 'pending');
 INSERT INTO `pending_orders` VALUES (20, 2, 909940689, '6', 3, 'Large', 'complete');
 INSERT INTO `pending_orders` VALUES (21, 2, 909940689, '11', 2, 'Meduim', 'complete');
-INSERT INTO `pending_orders` VALUES (23, 7, 334642094, '8', 1, 'Small (3 pieces)', 'pending');
+INSERT INTO `pending_orders` VALUES (23, 7, 334642094, '8', 1, 'Small (3 pieces)', 'Complete');
 INSERT INTO `pending_orders` VALUES (24, 7, 724100346, '8', 1, 'Small (3 pieces)', 'Complete');
+INSERT INTO `pending_orders` VALUES (25, 7, 1708867829, '7', 1, 'Small (3 pieces)', 'pending');
+INSERT INTO `pending_orders` VALUES (26, 11, 124055521, '8', 3, 'Small (3 pieces)', 'Complete');
 
 -- ----------------------------
 -- Table structure for product_categories
@@ -379,11 +343,14 @@ CREATE TABLE `wishlist`  (
   `customer_id` int NOT NULL,
   `product_id` int NOT NULL,
   PRIMARY KEY (`wishlist_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of wishlist
 -- ----------------------------
 INSERT INTO `wishlist` VALUES (2, 2, 8);
+INSERT INTO `wishlist` VALUES (5, 7, 6);
+INSERT INTO `wishlist` VALUES (6, 7, 9);
+INSERT INTO `wishlist` VALUES (8, 11, 7);
 
 SET FOREIGN_KEY_CHECKS = 1;

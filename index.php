@@ -29,7 +29,7 @@ include("includes/main.php");
     <div class="row"><!-- row Starts -->
 
     <?php
-
+//Function call
     getPro();
 
     ?>
@@ -49,9 +49,6 @@ include("includes/main.php");
               <li class="footer-nav__item">
                 <a href="#" class="footer-nav__link">The brand</a>
               </li>
-              <!-- <li class="footer-nav__item">
-                <a href="#" class="footer-nav__link">Local stores</a>
-              </li> -->
               <li class="footer-nav__item">
                 <a href="#" class="footer-nav__link">Customer service</a>
               </li>
@@ -129,30 +126,7 @@ include("includes/main.php");
         </div>
       </div>
 
-      <div class="banners">
-        <div class="container clearfix">
 
-          <!-- <div class="banner-award">
-            <span></span><br> Fashion awards 2016
-          </div> -->
-
-          <!-- <div class="banner-social">
-            <a href="#" class="banner-social__link">
-            <i class="icon-facebook"></i>
-          </a>
-            <a href="#" class="banner-social__link">
-            <i class="icon-twitter"></i>
-          </a>
-            <a href="#" class="banner-social__link">
-            <i class="icon-instagram"></i>
-          </a>
-            <a href="#" class="banner-social__link">
-            <i class="icon-pinterest-circled"></i>
-          </a>
-          </div> -->
-
-        </div>
-      </div>
 
       <div class="page-footer__subline">
         <div class="container clearfix">
@@ -161,9 +135,6 @@ include("includes/main.php");
             &copy; 2021 Wurood FlowerShop
           </div>
 
-          <!-- <div class="developer">
-            Dev by Waddah, Tayma, Abdallah
-          </div> -->
 
           <div class="designby">
             Design by Waddah, Tayma, Abdallah

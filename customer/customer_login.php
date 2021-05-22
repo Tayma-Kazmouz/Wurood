@@ -34,7 +34,7 @@
 
 <h4 align="center">
 
-<a href="forgot_pass.php"> Forgot Password </a>
+<a href="forgot_pass.php"> Forgot Password? </a>
 
 </h4>
 
@@ -69,6 +69,8 @@
 </div><!-- box Ends -->
 
 <?php
+
+//getting info from sql
 
 if(isset($_POST['login'])){
 

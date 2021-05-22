@@ -12,7 +12,7 @@ include("includes/main.php");
 
   <!-- MAIN -->
   <main>
-    <!-- HERO -->
+    <!-- Shopping Cart Page -->
     <div class="nero">
       <div class="nero__heading">
         <span class="nero__bold">SHOP</span> Cart
@@ -41,7 +41,7 @@ include("includes/main.php");
 
 $ip_add = getRealUserIp();
 
-$select_cart = "select * from cart where ip_add='$ip_add'";
+$select_cart = "select * from cart where ip_add='$ip_add'"; //selects from cart table at a certain ip_add value
 
 $run_cart = mysqli_query($con,$select_cart);
 
@@ -55,7 +55,7 @@ $count = mysqli_num_rows($run_cart);
 
 <table class="table" ><!-- table Starts -->
 
-<thead><!-- thead Starts -->
+<thead><!-- This is a table header  -->
 
 <tr>
 
@@ -91,6 +91,8 @@ $pro_size = $row_cart['size'];
 $pro_qty = $row_cart['qty'];
 
 $only_price = $row_cart['p_price'];
+
+// selects from products table with a certain product_id value
 
 $get_products = "select * from products where product_id='$pro_id'";
 
@@ -233,6 +235,7 @@ if($code == ""){
 
 }
 else{
+//selects coupons table with a certain coupon code value.
 
 $get_coupons = "select * from coupons where coupon_code='$code'";
 
@@ -259,7 +262,7 @@ echo "<script>alert('Your Coupon Code Is Expired :(')</script>";
 
 }
 else{
-
+// selects from cart table with a certain p_id and ip_add value
 $get_cart = "select * from cart where p_id='$coupon_pro' AND ip_add='$ip_add'";
 
 $run_cart = mysqli_query($con,$get_cart);
@@ -269,16 +272,17 @@ $check_cart = mysqli_num_rows($run_cart);
 
 if($check_cart == 1){
 
+//update the coupons table and set to a new value
 $add_used = "update coupons set coupon_used=coupon_used+1 where coupon_code='$code'";
 
 $run_used = mysqli_query($con,$add_used);
-
+//update the cart table and set the new values
 $update_cart = "update cart set p_price='$coupon_price' where p_id='$coupon_pro' AND ip_add='$ip_add'";
 
 $run_update = mysqli_query($con,$update_cart);
 
 echo "<script>alert('Your Coupon Code Has Been Applied UwU')</script>";
-
+//it refreshs the page after applying the coupon code.
 echo "<script>window.open('cart.php','_self')</script>";
 
 }
@@ -315,7 +319,7 @@ if(isset($_POST['update'])){
 
 foreach($_POST['remove'] as $remove_id){
 
-
+//delete from cart table at a certain p_id value
 $delete_product = "delete from cart where p_id='$remove_id'";
 
 $run_delete = mysqli_query($con,$delete_product);
@@ -358,7 +362,7 @@ echo @$up_cart = update_cart();
 </div><!-- col-md-3 col-sm-6 Ends -->
 
 <?php
-
+//selects from the products table and ordered by a random value, The LIMIT clause picks the first row in the result set sorted randomly.
 $get_products = "select * from products order by rand() LIMIT 0,3";
 
 $run_products = mysqli_query($con,$get_products);
@@ -411,7 +415,7 @@ if($pro_label == ""){
 
 }
 else{
-
+//inline styling
 $product_label = "
 
 <a class='label sale' href='#' style='color:black;'>
@@ -502,7 +506,7 @@ $product_label
 </div><!-- box-header Ends -->
 
 <p class="text-muted">
-Shipping and additional costs are calculated based on the values you have entered.
+Shipping and additional costs are calculated based on the products you have chosen.
 </p>
 
 <div class="table-responsive"><!-- table-responsive Starts -->

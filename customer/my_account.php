@@ -17,7 +17,7 @@ include("includes/main.php");
 
 ?>
   <main>
-    <!-- HERO -->
+    <!-- My Account -->
     <div class="nero">
       <div class="nero__heading">
         <span class="nero__bold">My </span>Account
@@ -96,7 +96,7 @@ if(isset($_GET['send_email'])){
 
 $subject = "Email Confirmation Message";
 
-$from = "sad.ahmed22224@gmail.com";
+$from = "anything@whatever.com";
 
 $message = "
 
@@ -186,6 +186,7 @@ include("../includes/footer.php");
 
 ?>
 
+<!-- linking jquery and bootstrap -->
 <script src="js/jquery.min.js"> </script>
 
 <script src="js/bootstrap.min.js"></script>
