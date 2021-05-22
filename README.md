@@ -1,25 +1,7 @@
-# ecommerce-website
-Full eCommerce Website with Admin Panel Built with PHP & MySql
+Wurood is an online flower shop project 
 
-## Getting Started
+Here are some images from the website created. 
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Home Page 
+![Home Page](https://user-images.githubusercontent.com/80001459/119236730-ad518000-bb41-11eb-8c41-cefb5a07c483.png)
 
-### Installing
-
-Database Configuration
-```
-- Download zip file and Unzip file on your local server.
-- Put this file inside “c:/xampp/htdocs/” .
-- Open phpmyadmin
-- Create Database named “ecom_store”. 
-- Import database : /ecom_store.sql
-- Open Your browser put inside URL: "http://localhost/ecommerce-website/”
-- To Login as admin : ”http://localhost/ecommerce-website/admin_area”
-```
-
-
-## Authors & Licence
-
-* **Yasser Dalouzi** - *eCommerce Website* - (https://github.com/yvsser1)
-* This project is open-source feel free to use it as you wish
